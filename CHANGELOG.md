@@ -5,6 +5,14 @@
 
 ---
 
+## [1.7.1] - 2026-11-20
+### 변경됨
+- **`README.md` 신규 프로젝트 적용 가이드 개선**:
+  - 기존 로컬 복사 안내를 `git clone` 후 `.git` 및 본 저장소 전용 문서(`PRD.md`, `CHANGELOG.md`, `README.md`) 정리 ➔ 새 `git init` 방식으로 간소화 (macOS/Linux 및 Windows PowerShell 명령어 병기)
+  - 이미 진행 중인 프로젝트 적용 시 필요한 3개 항목(`AGENTS.md`, `.agents/`, `rules/`) 안내 분리
+
+---
+
 ## [1.7.0] - 2026-11-20
 ### 추가 및 변경됨
 - **Google Antigravity 기준 명시 및 연동 기능 가이드 보완**:
