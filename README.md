@@ -92,27 +92,29 @@ vibe-coding-init/
 
 ## 🚀 새로운 프로젝트에 적용하는 방법
 
-### 방법 1. 필수 파일 복사 및 Git 초기화
+### 방법 1. 신규 프로젝트 시작 (`git clone` 후 정리 — 권장)
 
-신규 프로젝트에서는 루트의 `AGENTS.md`, `.agents/`, `rules/` (필요 시 `.gitignore`)만 그대로 복사하면 됩니다. `PRD.md`와 `CHANGELOG.md`는 별도 복사 없이 첫 기획·릴리즈 시점에 에이전트가 규칙 문서의 표준 양식에 맞춰 자동 생성합니다.
+저장소를 새 프로젝트 이름으로 바로 클론한 뒤, 기존 `.git` 이력과 본 저장소 전용 문서만 지우고 새 Git으로 초기화하는 가장 빠른 방법입니다.
 
-1. 신규 프로젝트 디렉토리를 생성합니다:
+1. 저장소를 클론하고 프로젝트 폴더로 이동합니다:
    ```bash
-   mkdir my-new-project
+   git clone https://github.com/haksoo0918/vibe-coding-init.git my-new-project
    cd my-new-project
    ```
 
-2. 본 저장소의 `AGENTS.md`, `.agents/`, `rules/` (및 선택적으로 `.gitignore`)를 복사합니다:
-   ```bash
-   cp /path/to/vibe-coding-init/AGENTS.md ./AGENTS.md
-   cp -r /path/to/vibe-coding-init/.agents ./.agents
-   cp -r /path/to/vibe-coding-init/rules ./rules
+2. 기존 `.git` 폴더와 본 저장소 전용 문서(`PRD.md`, `CHANGELOG.md`, `README.md`)를 삭제합니다:
+   - **macOS / Linux (bash/zsh)**:
+     ```bash
+     rm -rf .git PRD.md CHANGELOG.md README.md
+     ```
+   - **Windows (PowerShell)**:
+     ```powershell
+     Remove-Item -Recurse -Force .git, PRD.md, CHANGELOG.md, README.md
+     ```
+   > [!TIP]
+   > `PRD.md`와 `CHANGELOG.md`는 지워두면 첫 기획 및 릴리즈 시점에 에이전트가 규칙 문서의 표준 양식에 맞춰 자동으로 새로 생성합니다. `README.md`는 삭제 대신 새 프로젝트 소개로 내용을 비워 덮어써도 됩니다.
 
-   # 기존 .gitignore가 없는 프로젝트라면 함께 복사
-   cp /path/to/vibe-coding-init/.gitignore ./.gitignore
-   ```
-
-3. Git 저장소를 초기화하고 기본 브랜치를 구성합니다:
+3. 새 Git 저장소를 초기화하고 기본 브랜치(`main`, `dev`)를 구성합니다:
    ```bash
    git init
    git add .
@@ -121,9 +123,17 @@ vibe-coding-init/
    git checkout -b dev
    ```
 
-### 방법 2. Antigravity 세션 진입 후 바로 시작
+### 방법 2. 이미 진행 중인 프로젝트에 적용
 
-프로젝트 루트에 `AGENTS.md`, `.agents/skills/`, `rules/`가 복사된 상태로 Antigravity를 열면 세션 진입 시 자동으로 오케스트레이터 규칙과 스킬이 로드됩니다. 첫 요청 시 에이전트가 대안 제시 ➔ `PRD.md` 자동 생성 ➔ 승인 대기 ➔ 서브 에이전트 TDD 위임 순서로 작업을 진행합니다.
+기존 프로젝트에 규칙만 추가하고 싶다면, 클론한 저장소에서 아래 3개 항목만 기존 프로젝트 루트로 복사하면 됩니다 (기존 `.gitignore`는 유지).
+
+- `AGENTS.md`
+- `.agents/`
+- `rules/`
+
+### 적용 후 시작하기
+
+프로젝트 루트에 `AGENTS.md`, `.agents/`, `rules/`가 준비된 상태로 Antigravity를 열면 세션 진입 시 자동으로 오케스트레이터 규칙과 스킬이 로드됩니다. 첫 요청 시 에이전트가 대안 제시 ➔ `PRD.md` 자동 생성 ➔ 승인 대기 ➔ 서브 에이전트 TDD 위임 순서로 작업을 진행합니다.
 
 ---
 
