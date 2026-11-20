@@ -5,6 +5,28 @@
 
 ---
 
+## [1.7.0] - 2026-11-20
+### 추가 및 변경됨
+- **Google Antigravity 기준 명시 및 연동 기능 가이드 보완**:
+  - `README.md` 및 `PRD.md`에 **Google Antigravity 환경 기준 제작** 안내 추가
+  - `README.md`에 `AGENTS.md`·`.agents/skills/` 자동 인식 구조, `invoke_subagent` vs `/teamwork` 비교, 단계별 추천 슬래시 커맨드(`/plan`, `/grill-me`, `/teamwork`, `/boost`, `/compact`, `/learn`), 타 AI 도구(Cursor, Claude Code 등) 호환 참고표 수록
+- **규칙 문서에 표준 문서 양식 통합**:
+  - `rules/agent-execution.md`에 `PRD.md` 권장 작성 양식 추가
+  - `rules/git-workflow.md`에 `CHANGELOG.md` 권장 작성 양식 추가
+
+### 수정됨
+- **전체 마크다운 문서 서식 및 문법 오류 일괄 수정**:
+  - 11개 문서의 한글 굵은 글씨(`**...**` + 조사/어미) 파싱 깨짐 60건 전수 수정
+  - `rules/language-markdown.md`의 GitHub Alerts 줄바꿈 문법 및 인라인 백틱 표기 수정
+  - `README.md` 테이블 파이프 공백 정리
+
+### 제거됨
+- **`templates/` 폴더 제거 및 루트 단일화**:
+  - 중복·저효율 템플릿 5개(`AGENTS.template.md`, `PRD.template.md`, `CHANGELOG.template.md`, `.gitignore.template`, `env.example.template`) 삭제
+  - 신규 프로젝트 적용 시 루트의 `AGENTS.md`, `.agents/`, `rules/` (선택적으로 `.gitignore`)만 복사하도록 절차 간소화
+
+---
+
 ## [1.6.0] - 2026-11-20
 ### 추가 및 변경됨
 - **경로 표기 표준화 및 상대 링크 오류 수정**:
