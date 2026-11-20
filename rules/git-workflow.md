@@ -83,5 +83,25 @@
 
 ---
 
-## 4. 민감 파일 커밋 방지
+## 4. `CHANGELOG.md` 권장 작성 양식
+
+`CHANGELOG.md`가 없는 프로젝트에서 첫 `main` 머지/릴리즈 요청을 받으면, 메인 에이전트는 [유의적 버전(Semantic Versioning)](https://semver.org/lang/ko/) 기준으로 아래 양식의 `./CHANGELOG.md`를 생성합니다:
+
+```markdown
+# 변경 이력 (Changelog)
+
+## [1.0.0] - YYYY-MM-DD
+### 추가됨
+- 새로운 기능 요약
+
+### 변경됨
+- 기존 동작 변경 사항 요약
+
+### 수정됨
+- 해결된 버그 요약
+```
+
+---
+
+## 5. 민감 파일 커밋 방지
 - 커밋 전 `.env`, 개인 API 키, 로그 파일, 빌드 결과물(`dist/`, `build/`, `node_modules/`)이 스테이징되지 않도록 `.gitignore`를 철저히 확인합니다.
